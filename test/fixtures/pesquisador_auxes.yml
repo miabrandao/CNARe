@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  research_area: MyText
+  institution: MyString
+  acronym: MyString
+
+two:
+  name: MyString
+  research_area: MyText
+  institution: MyString
+  acronym: MyString

@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  nome: MyString
+  nomeDsc: MyString
+  url_lattes: MyString
+  url_lattes_oficial: MyString
+  data_coleta_lattes: 2015-01-19
+  nivel_coleta: 1
+  ult_data_atualizacao_lattes: 2015-01-19
+  sexo: MyString
+  area: MyText
+  instituicao: MyString
+  selecao: 1
+
+two:
+  nome: MyString
+  nomeDsc: MyString
+  url_lattes: MyString
+  url_lattes_oficial: MyString
+  data_coleta_lattes: 2015-01-19
+  nivel_coleta: 1
+  ult_data_atualizacao_lattes: 2015-01-19
+  sexo: MyString
+  area: MyText
+  instituicao: MyString
+  selecao: 1

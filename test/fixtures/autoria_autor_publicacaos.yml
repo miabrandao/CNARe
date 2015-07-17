@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  autor_id: 1
+  publicacao_id: 1
+  ordem: 1
+
+two:
+  autor_id: 1
+  publicacao_id: 1
+  ordem: 1

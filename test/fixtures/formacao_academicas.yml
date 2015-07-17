@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  instituicao_formacao_academica_id: 1
+  tipo_formacao_academica_id: 1
+  pesquisador_id: 1
+  data_inicio: 2015-01-19
+  data_fim: 2015-01-19
+  descricao: MyText
+
+two:
+  instituicao_formacao_academica_id: 1
+  tipo_formacao_academica_id: 1
+  pesquisador_id: 1
+  data_inicio: 2015-01-19
+  data_fim: 2015-01-19
+  descricao: MyText

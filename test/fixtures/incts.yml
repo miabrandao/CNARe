@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  area_conhecimento_id: 1
+  inct_tema_id: 1
+  nome: MyString
+  link_oficial: MyText
+  link_2: MyText
+
+two:
+  area_conhecimento_id: 1
+  inct_tema_id: 1
+  nome: MyString
+  link_oficial: MyText
+  link_2: MyText

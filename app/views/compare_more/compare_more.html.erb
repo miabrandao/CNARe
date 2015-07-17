@@ -1,0 +1,60 @@
+<html>
+  <head>
+    <style>
+      #tooltip {
+	padding: 3px;
+	background: #EEE;
+	visibility: hidden;
+	position: absolute;
+	opacity: .8;
+	pointer-events: none;
+      }
+      input[type="checkbox"] {
+	float: left;
+	margin-right: 5px;
+      }
+      div#checkbox {
+	position: absolute;
+	top: 100px;
+	left: 50px;
+	width: 148px;
+	float: left;
+      }
+      div#search_form {
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	width: 100px;
+      }
+      div#svg_container {
+	position: relative;
+      }
+      svg {
+	border: solid 1px #CCC;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      var o1 = 0, o2 = 1, o3 = 0;
+    </script>
+    <div id="svg_container">
+      <div id="tooltip"></div>
+      <div id="search_form">
+	<%=form_tag(:controller => "compare_more", :action => "create", :method => "post") do %>
+	  <input id="search" type="text" name="search" size="200" autocomplete="off"/>
+	<% end %>
+      </div>
+      <div id="checkbox">
+	<center><p><b>Visualization Options </b></p></center>
+	<hr>
+	<label><input type="checkbox" name="options" value="o1" onclick="o1 = !o1; loadChordSvg(o1, o2, o3);"/>Self-loops</label>
+	<label><input checked type="checkbox" name="options" value="o2" onclick="o2 = !o2; loadChordSvg(o1, o2, o3);"/>Fixed width</label>
+	<label><input type="checkbox" name="options" value="o3" onclick="o3 = !o3; loadChordSvg(o1, o2, o3);"/>Hide / show</label>
+      </div>
+    </div>
+    <script>
+      loadChordSvg(o1, o2, o3);
+    </script>
+  </body>
+</html>

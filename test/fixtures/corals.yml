@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  pesquisador1_id: 1
+  pesquisador2_id: 1
+  value: 1.5
+
+two:
+  pesquisador1_id: 1
+  pesquisador2_id: 1
+  value: 1.5

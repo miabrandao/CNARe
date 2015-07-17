@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  source: 1
+  target: 1
+  value: 1
+  last_year_pub_target: 1
+  count_pub_target: 1
+
+two:
+  source: 1
+  target: 1
+  value: 1
+  last_year_pub_target: 1
+  count_pub_target: 1

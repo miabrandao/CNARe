@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  pesquisador_id: 1
+  modclass: 1
+  selecao: 1
+
+two:
+  pesquisador_id: 1
+  modclass: 1
+  selecao: 1

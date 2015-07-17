@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  pais_id: 1
+  sigla: MyString
+  nome: MyString
+
+two:
+  pais_id: 1
+  sigla: MyString
+  nome: MyString

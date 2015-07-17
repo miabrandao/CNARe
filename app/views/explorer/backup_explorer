@@ -1,0 +1,120 @@
+<head>
+  <style>
+    input[type="radio"] {
+      vertical-align: baseline;
+    }
+    div.box {
+      /*background-color: #E6FFFF; */
+      background-color: lightsteelblue;
+      border: solid 1px #ccc;
+      border-radius: 5px;
+      width: 218px;
+      height: 455px;
+      position: absolute;
+      top: 165px;
+      left: 100px;
+      padding-left: 5px;
+    }
+    div.tooltip {   
+      position: absolute;           
+      text-align: center;           
+      width: auto;                  
+      height: auto;                 
+      padding: 3px;
+      font: 12px sans-serif;
+      background: lightsteelblue;   
+      border: 0px;      
+      border-radius: 8px;           
+      pointer-events: none;         
+    }
+    svg {
+	background-color: white; 
+	border: solid 1px #ccc;
+	border-radius: 5px;
+    }
+    .node text {
+	font: bold 12px sans-serif;
+	fill: darkblue;
+	text-shadow: 0 1px 0 #000000;
+    }
+    .link {
+      /*stroke: #000;*/
+      /*stroke-opacity: .6;*/
+    }
+    #form_institution {
+      height: 0px;
+      position: absolute;
+      left: 100px;
+      top: 80px;
+    }
+    #dl_link {
+      top: 590px;
+      left: 1150px;
+      position: absolute;
+      border: solid 1px #CCC;
+      border-radius: 5px;
+      background-color: #00D;
+      padding: 6px;
+      color: #FFF;
+      font-family: sans-serif;
+      font-size: 12px;
+      text-decoration: none;
+    }
+    #dl_link:hover {
+      background-color: #00A;
+    }
+  </style>
+  <script src="/assets/d3.js"></script>
+  <script src="/assets/fisheye.js"></script>
+  <script src="/assets/svgToPng.js"></script>
+  <script src="/assets/canvg.js"></script>
+  <script src="/assets/explorer/loadForceDiagram.js"></script>
+  <script src="/assets/explorer/loadAdjMatrix.js"></script>
+</head>
+<%= form_tag({:action => 'load_institution'}, {:id => 'form_institution'}) do %>
+  <%= select_tag 'select_table', options_for_select(["Redes", "Instituicao", "Pesquisador"], :selected=>@table),
+    prompt: "Select", :onchange => "submit();" %><br />
+  <% if @table and @table != "" %>
+    <%= select_tag 'select_institution1', options_for_select(@instituicoes1.collect{ |u| [u.acronimo, u.id] }, :selected=>@instituicao1), 
+      prompt: "Select an institution", :onchange => "submit();" %><br />
+  <% end %>
+  <% if @instituicao1 and @instituicao1 != "" %>
+    <%= select_tag 'select_institution2', options_for_select(@instituicoes2.collect{ |u| [u.acronimo, u.id] }, :selected=>@instituicao2), 
+      prompt: "Select an institution", :onchange => "submit();" %><br />
+  <% end %>
+  <% if @instituicao2 and @instituicao2 != "" %>
+    <%= select_tag 'select_institution3', options_for_select(@instituicoes3.collect{ |u| [u.acronimo, u.id] }, :selected=>@instituicao3),
+      prompt: "Select an institution", :onchange => "submit();" %>
+  <% end %>
+<% end %>
+<% if @instituicao1 and @instituicao1 != "" %>
+  <div class="box" id="estatistica">
+    <center><p><b>Visualization</b></p></center>
+    <label><input name="vis" type="radio" value=0 checked onclick="loadForceDiagram()"/>Global </label>
+    <label><input name="vis" type="radio" value=1 onclick="loadAdjMatrix()"/>Co-autorship</label>
+    <center><p><b>Statistics</b></p></center>
+    <p><b>-> <%= @nome_instituicao1[0] %>:</b></p>
+    <p># researchers: <%= @lista_pesquisadores_inst1.length %></p>
+    <p># ties: <%= @colabora_inst1.length %></p>
+    <p># publications: <%= @lista_pubs_inst1.length %></p>
+    <% if @instituicao2 and @instituicao2 != "" %>
+      <p><b>-> <%= @nome_instituicao2[0] %>:</b></p>
+      <p># researchers: <%= @lista_pesquisadores_inst2.length %></p>
+      <p># ties: <%= @colabora_inst2.length %></p>
+      <p># publications: <%= @lista_pubs_inst2.length %></p>
+      <p><b>-> Common to <%= @nome_instituicao1[0] %> and <%= @nome_instituicao2[0] %>:</b></p>
+      <p># ties: <%= @colabora_common.length %></p>
+      <p># publications: <%= @lista_pubs_in_common.length %></p>
+    <% end %>
+  </div>
+<% end %>
+<div id="graph_d"></div>
+<a id="dl_link" href="#" download="canvas.png">Download</a>
+<div class="tooltip"></div>
+<script>
+  document.getElementById("dl_link").addEventListener("click", CanvasToPng, false);
+  loadForceDiagram();
+  d3.select("body").append("canvas")
+    .attr("id", "cnv")
+    .style("display", "none");
+</script>

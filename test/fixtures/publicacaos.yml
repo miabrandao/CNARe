@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  autor_citacao_id: 1
+  publicacao_replica_id: 1
+  edicao_id: 1
+  tipo_publicacao_id: 1
+  titulo: MyText
+  coautores: MyText
+  doi: MyText
+  data_publicacao: 2015-01-19
+  data_insercao: 2015-01-19
+  texto_citacao: MyText
+  pagina: MyText
+  dsc_coautores: MyText
+  dsc_dataPublicacao: MyText
+  dsc_titulo: MyText
+  tema_id: 1
+
+two:
+  autor_citacao_id: 1
+  publicacao_replica_id: 1
+  edicao_id: 1
+  tipo_publicacao_id: 1
+  titulo: MyText
+  coautores: MyText
+  doi: MyText
+  data_publicacao: 2015-01-19
+  data_insercao: 2015-01-19
+  texto_citacao: MyText
+  pagina: MyText
+  dsc_coautores: MyText
+  dsc_dataPublicacao: MyText
+  dsc_titulo: MyText
+  tema_id: 1

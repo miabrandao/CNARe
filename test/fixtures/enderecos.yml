@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  cidade_estado_pais_id: 1
+  logradouro: MyText
+  bairro: MyString
+  cep: MyString
+
+two:
+  cidade_estado_pais_id: 1
+  logradouro: MyText
+  bairro: MyString
+  cep: MyString
