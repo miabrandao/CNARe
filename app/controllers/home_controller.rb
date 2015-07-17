@@ -2,7 +2,6 @@
 class HomeController < ApplicationController
 
   def index
-    @teste = 1
     #Número da página
     @here = 1
     #Buscando as recomendações de colaboração...
